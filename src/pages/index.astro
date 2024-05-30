@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro"
+import Button from "../components/Button.astro"
+import Btn from "../components/Btn.jsx"
 ---
 
 <Layout title="Gift Box">
@@ -13,10 +15,26 @@ import Card from "../components/Card.astro"
 				La mejor experiencia gastronómica para compartir con tus seres queridos.
 			</h2>
 		</div>
+		<div id="dialog" style="display: hidden">¡Hola Mundo!</div>
+		<Button />
+		<Btn  client:load/>
 		<div class="flex gap-5 justify-center py-5">
 			<Card/>
 			<Card/>
 			<Card/>
 		</div>
+
+<script>
+  import { isOpen } from "../sotre";
+
+  // Escucha los cambios en el store y muestra/oculta el diálogo en consecuencia
+  isOpen.subscribe(open => {
+    if (open) {
+      document.getElementById('dialog').style.display = 'block';
+    } else {
+      document.getElementById('dialog').style.display = 'none';
+    }
+  })
+</script>
 	</main>
 </Layout>

@@ -1,0 +1,19 @@
+
+
+<script>
+    import { isOpen } from "../sotre"
+    
+    // Configura el store a true cuando se hace clic en el botón
+    function openDialog() {
+        isOpen.set(true);
+    }
+    function openDialog2() {
+        isOpen.set(false);
+    }
+    // Agrega un escuchador de eventos al botón
+    document.getElementById('openDialog').addEventListener('click', openDialog);
+    document.getElementById('openDialog2').addEventListener('click', openDialog2);
+</script>
+
+<button id="openDialog">Open</button>
+<button id="openDialog2">false</button>
