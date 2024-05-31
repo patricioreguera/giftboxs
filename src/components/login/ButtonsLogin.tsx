@@ -2,18 +2,17 @@ import { isLogin, user } from "../../sotre";
 import { useStore } from "@nanostores/react";
 
 const ButtonsLogin = () => {
-	const $isUserLogin = useStore(isLogin);
+	const isUserLogin = useStore(isLogin);
+	const User = useStore(user);
 
 	const handleClick = () => {
-		isLogin.set(!$isUserLogin);
+		isLogin.set(!isUserLogin);
 	};
 
 	return isLogin.get() ? (
 		<button onClick={handleClick}>
 			<div className="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-blue-600  rounded-full dark:bg-blue-600">
-				<span className="font-medium text-white ">
-					{user.get().name.slice(0, 1)}
-				</span>
+				<span className="font-medium text-white ">{User.name.slice(0, 1)}</span>
 			</div>
 		</button>
 	) : (
