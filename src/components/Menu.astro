@@ -1,4 +1,6 @@
 ---
+import ButtonsLogin from "./login/ButtonsLogin";
+
 const MENU_ELEMENTS = [
 	{
 		title: "Home",
@@ -6,7 +8,7 @@ const MENU_ELEMENTS = [
 	},
 	{
 		title: "Contact",
-		url: "/a",
+		url: "/contact",
 	},
 ];
 ---
@@ -24,22 +26,9 @@ const MENU_ELEMENTS = [
 		<div
 			class="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse"
 		>
-			<a
-				href="/"
-				class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
-				>Login</a
-			>
-			<a
-				href="/"
-				class="cursor-pointer inline-flex p-0.5 text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
-			>
-				<span
-					class="px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
-				>
-					Sign up
-				</span>
-			</a>
+			<ButtonsLogin client:load />
 		</div>
+
 		<div
 			id="mega-menu"
 			class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"

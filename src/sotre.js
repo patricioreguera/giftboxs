@@ -1,9 +1,7 @@
-import { atom } from 'nanostores';
+import { atom } from "nanostores";
 
-export const isOpen = atom(false);
-export const user = atom(
-    {
-        name:"Patricio",
-        age:40
-    }
-);
+export const isLogin = atom(false);
+export const user = atom({
+	name: "Patricio",
+	age: 40,
+});

@@ -1,40 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro"
-import Button from "../components/Button.astro"
-import Btn from "../components/Btn.jsx"
+import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
+import Btn from "../components/Btn.jsx";
 ---
 
 <Layout title="Gift Box">
 	<main>
-		<div class="flex flex-col m-auto text-center gap-2 py-52 px-5 bg-slate-300">
-			<h1 class="text-4xl">
+		<div class="flex flex-col m-auto text-center gap-2 py-52 px-5 bg-gray-600">
+			<h1 class="text-4xl text-white">
 				¡Disfruta de Momentos Únicos con Nuestras Cajas Temáticas!
 			</h1>
-			<h2 class="text-2xl font-thin">
-				La mejor experiencia gastronómica para compartir con tus seres queridos.
+			<h2 class="text-2xl font-thin text-white">
+				Descubre nuestras deliciosas opciones de cajas temáticas y sorprende a
+				tus seres queridos.
 			</h2>
 		</div>
-		<div id="dialog" style="display: hidden">¡Hola Mundo!</div>
-		<Button />
-		<Btn  client:load/>
-		<div class="flex gap-5 justify-center py-5">
-			<Card/>
-			<Card/>
-			<Card/>
-		</div>
-
-<script>
-  import { isOpen } from "../sotre";
-
-  // Escucha los cambios en el store y muestra/oculta el diálogo en consecuencia
-  isOpen.subscribe(open => {
-    if (open) {
-      document.getElementById('dialog').style.display = 'block';
-    } else {
-      document.getElementById('dialog').style.display = 'none';
-    }
-  })
-</script>
 	</main>
+	<div class="flex gap-5 justify-center py-5 flex-wrap">
+		<Card />
+		<Card />
+		<Card />
+	</div>
 </Layout>
