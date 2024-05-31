@@ -9,6 +9,14 @@ const ButtonsLogin = () => {
 	};
 
 	return isLogin.get() ? (
+		<button onClick={handleClick}>
+			<div className="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-blue-600  rounded-full dark:bg-blue-600">
+				<span className="font-medium text-white ">
+					{user.get().name.slice(0, 1)}
+				</span>
+			</div>
+		</button>
+	) : (
 		<div className="flex flex-row gap-5">
 			<button
 				onClick={handleClick}
@@ -27,14 +35,6 @@ const ButtonsLogin = () => {
 				</span>
 			</button>
 		</div>
-	) : (
-		<button onClick={handleClick}>
-			<div className="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-blue-600  rounded-full dark:bg-blue-600">
-				<span className="font-medium text-white ">
-					{user.get().name.slice(0, 1)}
-				</span>
-			</div>
-		</button>
 	);
 };
 
