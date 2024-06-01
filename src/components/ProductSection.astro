@@ -1,0 +1,18 @@
+---
+const { image, title, description, direction } = Astro.props;
+---
+
+<section
+	class={`flex flex-col ${direction === "left" ? "md:flex-row" : "md:flex-row-reverse"} `}
+>
+	<div class="w-1/2 h-[500px]">
+		<!-- 	<img src="http://placehold.it/1000x800" alt="Image" /> -->
+		<img class="w-full h-full object-cover" src={image} alt="Image" />
+	</div>
+	<div
+		class=`flex flex-col w-1/2 p-10 justify-center gap-2 ${direction === "left" ? "items-start" : "items-end"}`
+	>
+		<h1 class="text-5xl">{title}</h1>
+		<p>{description}</p>
+	</div>
+</section>

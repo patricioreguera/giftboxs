@@ -1,34 +1,40 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import Btn from "../components/Btn.jsx";
+import HeroSection from "../components/HeroSection.astro";
+import ProductSection from "../components/ProductSection.astro";
+import ProductSectionR from "../components/ProductSectionR.astro";
 ---
 
 <Layout title="Gift Box">
 	<main>
-		<div class="flex flex-col m-auto text-center gap-2 py-52 px-5 bg-gray-600">
-			<h1 class="text-4xl text-white">
-				¡Disfruta de Momentos Únicos con Nuestras Cajas Temáticas!
-			</h1>
-			<h2 class="text-2xl font-thin text-white">
-				Descubre nuestras deliciosas opciones de cajas temáticas y sorprende a
-				tus seres queridos.
-			</h2>
-		</div>
+		<HeroSection />
+		<ProductSection
+			image="https://m.media-amazon.com/images/I/818PkR5KJEL._AC_SL1500_.jpg"
+			title="Caja de regalo para mujer"
+			description="Regalo perfecto para cualquier ocasión"
+			direction="left"
+		/>
+		<section class="bg-gray-200 py-10">
+			<div class="container mx-auto">
+				<h2 class="text-3xl font-bold text-center mb-5">
+					¡Descubre nuestras cajas temáticas!
+				</h2>
+				<p class="text-center text-gray-600">
+					Encuentra la opción perfecta para sorprender a tus seres queridos.
+				</p>
+			</div>
+		</section>
+		<ProductSection
+			image="https://res.cloudinary.com/dhoxoi8ob/image/upload/v1717235213/Disen%CC%83o_sin_ti%CC%81tulo_1_bznblx.jpg"
+			title="Box Movie"
+			description="Description of the Box Movie goes here."
+			direction="right"
+		/>
+		<!-- 		<div class="flex gap-5 justify-center py-5 flex-wrap">
+			<Card />
+			<Card />
+			<Card />
+		</div> -->
 	</main>
-	<div class="flex gap-5 justify-center py-5 flex-wrap">
-		<Card />
-		<Card />
-		<Card />
-	</div>
-	<section class="bg-gray-200 py-10">
-		<div class="container mx-auto">
-			<h2 class="text-3xl font-bold text-center mb-5">
-				¡Descubre nuestras cajas temáticas!
-			</h2>
-			<p class="text-center text-gray-600">
-				Encuentra la opción perfecta para sorprender a tus seres queridos.
-			</p>
-		</div>
-	</section>
 </Layout>
